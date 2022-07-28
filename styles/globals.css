@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  font-family: Inter;
+}
+
+.index-heading {
+  @apply text-3xl lg:text-4xl;
+}
+
+.index-emoji {
+  @apply text-3xl sm:text-4xl;
+}
+
+.index-arrow-emoji {
+  @apply text-4xl sm:text-5xl;
+}
