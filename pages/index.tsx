@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-screen flex-1 flex-col items-center justify-center text-center">
+      <main className="flex w-full flex-1 flex-col items-center justify-center text-center">
         <Jumbotron />
         <Description />
       </main>
