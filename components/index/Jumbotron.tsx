@@ -1,10 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import supabase from "../../utils/supabaseinit";
 
 function jumbotron() {
   const [hidden, setHidden] = useState("hidden");
+  const inputEmail = useRef(null);
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+    const { user, error } = await supabase.auth.signIn({
+      email: inputEmail?.current?.value,
+    });
+
     setHidden("");
     setTimeout(() => {
       setHidden("hidden");
@@ -16,6 +22,7 @@ function jumbotron() {
       <div className="index-heading font-semibold">Emoji Journal</div>
       <div className="index-heading mb-10">😁</div>
       <input
+        ref={inputEmail}
         type="text"
         className="w-1/2 rounded-md h-10 sm:h-12 lg:h-13 p-2 md:p-3 lg:p-4"
         placeholder="Email"
